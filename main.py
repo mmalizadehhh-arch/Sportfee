@@ -44,7 +44,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Main function
 def main():
-    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    BALE_API_URL="https://tapi.bale.ai/"
+    app = ApplicationBuilder().base_url(BALE_API_URL).token(TELEGRAM_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
@@ -53,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
