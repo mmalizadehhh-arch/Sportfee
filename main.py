@@ -14,7 +14,7 @@ logging.basicConfig(
 # Load environment variables
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME")
-GOOGLE_CREDENTIALS_FILE = "credentials.json"
+GOOGLE_CREDENTIALS_FILE = os.getenv("CREDENTIALS_JSON")#"credentials.json"
 
 # Connect to Google Sheets
 def connect_to_google_sheets():
@@ -54,4 +54,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
